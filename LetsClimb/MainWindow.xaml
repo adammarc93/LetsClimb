@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LetsClimb"
         mc:Ignorable="d"
-        Title="MainWindow" Width="700" Height="550">
+        Title="Let's Climb" Width="700" Height="550">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <TabControl Grid.Column="0" Margin="10">
+            <!--Competitor tab item-->
+            <TabItem  Header="Compatitor">
+                <StackPanel Grid.Column="0">
+                    <StackPanel Margin="5">
+                        <Label Content="Name"/>
+                        <TextBox Name="NameTextBox"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <Label Content="LastName"/>
+                        <TextBox Name="LastNameTextBox"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <Label Content="Sex"/>
+                        <ComboBox Name="SexComboBox"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <Label Content="Category"/>
+                        <ComboBox Name="CategoryComboBox"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <Label Content="Top"/>
+                        <TextBox Name="TopTextBox"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <Label Content="Bonus"/>
+                        <TextBox Name="BonusTextBox"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button Name="AddButton" Content="Add" Width="100" Margin="5" Click="AddButton_Click"/>
+                        <Button Name="DeleteButton" Content="Delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+        <!--Competitors list view-->
+        <ListView Name="CompetitorListView" Margin="10" Grid.Column="1" ItemsSource="{Binding CompetitorList}">
+            <ListView.View>
+                <GridView>
+                    <!--<GridViewColumn Header="Place" Width="50"/>-->
+                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Last Name" Width="100" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Top" Width="50" DisplayMemberBinding="{Binding Top}"/>
+                    <GridViewColumn Header="Bonus" Width="50" DisplayMemberBinding="{Binding Bonus}"/>
+                    <GridViewColumn Header="Category" Width="100" DisplayMemberBinding="{Binding Category}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
