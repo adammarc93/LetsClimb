@@ -15,30 +15,30 @@
         <TabControl Grid.Column="0" Margin="10">
             <!--Competitor tab item-->
             <TabItem  Header="Compatitor">
-                <StackPanel Grid.Column="0">
+                <StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="Name"/>
-                        <TextBox Name="NameTextBox"/>
+                        <TextBox Name="CompatitorNameTextBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="LastName"/>
-                        <TextBox Name="LastNameTextBox"/>
+                        <TextBox Name="CompatitorLastNameTextBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="Sex"/>
-                        <ComboBox Name="SexComboBox"/>
+                        <ComboBox Name="CompatitorSexComboBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
-                        <Label Content="Category"/>
-                        <ComboBox Name="CategoryComboBox"/>
+                        <Label Content="CompatitorCategory"/>
+                        <ComboBox Name="CompatitorCategoryComboBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="Top"/>
-                        <TextBox Name="TopTextBox"/>
+                        <TextBox Name="CompatitorTopTextBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="Bonus"/>
-                        <TextBox Name="BonusTextBox"/>
+                        <TextBox Name="CompatitorBonusTextBox"/>
                     </StackPanel>
                     <StackPanel>
                         <Button Name="AddButton" Content="Add" Width="100" Margin="5" Click="AddButton_Click"/>
