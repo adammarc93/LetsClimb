@@ -227,10 +227,17 @@
         /// </summary>
         private void CompetitionListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var competition = (Competition)this.CompetitionListView.SelectedItem;
-            var categories = competition.Categories;
-            this.CompetitorTabItem.IsEnabled = true;
-            this.CompetitorCategoryComboBox.ItemsSource = categories;
+            try
+            {
+                var competition = (Competition)this.CompetitionListView.SelectedItem;
+                var categories = competition.Categories;
+                this.CompetitorTabItem.IsEnabled = true;
+                this.CompetitorCategoryComboBox.ItemsSource = categories;
+            }
+            catch(NullReferenceException)
+            {
+                this.CompetitorTabItem.IsEnabled = false;
+            }
         }
     }
 }
