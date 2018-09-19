@@ -11,6 +11,9 @@
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Competition's result
+        /// </summary>
         public ObservableCollection<Competitor> CompetitorList { get; set; }
 
         /// <summary>
