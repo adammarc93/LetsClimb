@@ -38,7 +38,7 @@
                     </StackPanel>
 
                     <!--Competition List View-->
-                    <ListView Name="CompetitionListView"  Grid.Column="1" Margin="5" ItemsSource="{Binding CompetitionCollection}">
+                    <ListView Name="CompetitionListView"  Grid.Column="1" Margin="5" ItemsSource="{Binding CompetitionCollection}" SelectionChanged="CompetitionListView_SelectionChanged">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
@@ -49,7 +49,7 @@
             </TabItem>
 
             <!--Competitor tab item-->
-            <TabItem  Header="Competitor">
+            <TabItem Name="CompetitorTabItem" Header="Competitor" IsEnabled="False">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
