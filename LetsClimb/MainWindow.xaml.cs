@@ -31,7 +31,6 @@
             InitializeComponent();
             this.DataContext = this;
             this.CompetitorSexComboBox.ItemsSource = Enum.GetValues(typeof(Sex));
-            this.CompetitorCategoryComboBox.ItemsSource = Enum.GetValues(typeof(Category));
             CompetitionCollection = new ObservableCollection<Competition>();
             CompetitorList = new ObservableCollection<Competitor>();
         }
@@ -44,7 +43,7 @@
             var name = this.CompetitorNameTextBox.Text;
             var lastName = this.CompetitorLastNameTextBox.Text;
             var sex = (Sex)Enum.Parse(typeof(Sex), this.CompetitorSexComboBox.Text);
-            var category = (Category)Enum.Parse(typeof(Category), this.CompetitorCategoryComboBox.Text);
+            var category = (string)this.CompetitorCategoryComboBox.SelectedItem;
             var top = Int32.Parse(this.CompetitorTopTextBox.Text);
             var bonus = Int32.Parse(this.CompetitorBonusTextBox.Text);
             var competitor = new Competitor(name, lastName, sex, category, top, bonus);
@@ -221,6 +220,17 @@
             {
                 this.CompetitionCategorySixTextBox.IsEnabled = false;
             }
+        }
+
+        /// <summary>
+        /// On selected item changed in Competition list view
+        /// </summary>
+        private void CompetitionListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var competition = (Competition)this.CompetitionListView.SelectedItem;
+            var categories = competition.Categories;
+            this.CompetitorTabItem.IsEnabled = true;
+            this.CompetitorCategoryComboBox.ItemsSource = categories;
         }
     }
 }

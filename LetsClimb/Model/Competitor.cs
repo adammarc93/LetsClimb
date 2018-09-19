@@ -3,12 +3,7 @@
     /// <summary>
     /// Choice of sex
     /// </summary>
-    public enum Sex { Man, Women };
-
-    /// <summary>
-    /// Choice of category
-    /// </summary>
-    public enum Category { Masters, Losers}
+    public enum Sex { Male, Female };
 
     /// <summary>
     /// Competitor model class
@@ -33,7 +28,7 @@
         /// <summary>
         /// Competitor's category
         /// </summary>
-        public Category Category { get; set; }
+        public string Category { get; set; }
 
         /// <summary>
         /// Competitor's top number
@@ -53,7 +48,7 @@
         /// <summary>
         /// Competitor model constructor
         /// </summary>
-        public Competitor(string name, string lastName, Sex sex, Category category, int top, int bonus)
+        public Competitor(string name, string lastName, Sex sex, string category, int top, int bonus)
         {
             this.Name = name;
             this.LastName = lastName;
