@@ -16,14 +16,9 @@
         public ObservableCollection<Competitor> CompetitorList { get; set; }
 
         /// <summary>
-        /// 
+        /// Competitions observable collection
         /// </summary>
         public ObservableCollection<Competition> CompetitionCollection { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Competition Competition { get; set; }
 
         /// <summary>
         /// Main window constructor
