@@ -7,59 +7,101 @@
         mc:Ignorable="d"
         Title="Let's Climb" Width="700" Height="550">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="5*"/>
-        </Grid.ColumnDefinitions>
+        <TabControl Margin="10">
+            <!--Cmpetition tab item-->
+            <TabItem Header="Competition">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
 
-        <TabControl Grid.Column="0" Margin="10">
-            
+                    <!--Competition panel-->
+                    <StackPanel Grid.Column="0">
+                        <StackPanel Margin="5">
+                            <Label Content="Name"/>
+                            <TextBox Name="CompetitionNameTextBox"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <Label Content="Categories"/>
+                            <TextBox Name="CompetitionCategoryOneTextBox" Margin="2" TextChanged="CompetitionCategoryOneTextBox_TextChanged"/>
+                            <TextBox Name="CompetitionCategoryTwoTextBox" IsEnabled="False" Margin="2" TextChanged="CompetitionCategoryTwoTextBox_TextChanged"/>
+                            <TextBox Name="CompetitionCategoryThreeTextBox" IsEnabled="False" Margin="2" TextChanged="CompetitionCategoryThreeTextBox_TextChanged"/>
+                            <TextBox Name="CompetitionCategoryFourTextBox" IsEnabled="False" Margin="2" TextChanged="CompetitionCategoryFourTextBox_TextChanged"/>
+                            <TextBox Name="CompetitionCategoryFiveTextBox" IsEnabled="False" Margin="2" TextChanged="CompetitionCategoryFiveTextBox_TextChanged"/>
+                            <TextBox Name="CompetitionCategorySixTextBox" IsEnabled="False" Margin="2"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Name="CompetitionAddButton" Content="Add" Width="100" Margin="5" Click="CompetitionAddButton_Click"/>
+                            <Button Name="CompetitionDeleteButton" Content="Delete" Width="100" Margin="5" Click="CompetitionDeleteButton_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!--Competition List View-->
+                    <ListView Name="CompetitionListView"  Grid.Column="1" Margin="5" ItemsSource="{Binding CompetitionCollection}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+
             <!--Competitor tab item-->
             <TabItem  Header="Competitor">
-                <StackPanel>
-                    <StackPanel Margin="5">
-                        <Label Content="Name"/>
-                        <TextBox Name="CompetitorNameTextBox"/>
-                    </StackPanel>
-                    <StackPanel Margin="5">
-                        <Label Content="LastName"/>
-                        <TextBox Name="CompetitorLastNameTextBox"/>
-                    </StackPanel>
-                    <StackPanel Margin="5">
-                        <Label Content="Sex"/>
-                        <ComboBox Name="CompetitorSexComboBox"/>
-                    </StackPanel>
-                    <StackPanel Margin="5">
-                        <Label Content="CompetitorCategory"/>
-                        <ComboBox Name="CompetitorCategoryComboBox"/>
-                    </StackPanel>
-                    <StackPanel Margin="5">
-                        <Label Content="Top"/>
-                        <TextBox Name="CompetitorTopTextBox"/>
-                    </StackPanel>
-                    <StackPanel Margin="5">
-                        <Label Content="Bonus"/>
-                        <TextBox Name="CompetitorBonusTextBox"/>
-                    </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Competitor panel-->
                     <StackPanel>
-                        <Button Name="AddButton" Content="Add" Width="100" Margin="5" Click="AddButton_Click"/>
-                        <Button Name="DeleteButton" Content="Delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
+                        <StackPanel Margin="5">
+                            <Label Content="Name"/>
+                            <TextBox Name="CompetitorNameTextBox"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <Label Content="LastName"/>
+                            <TextBox Name="CompetitorLastNameTextBox"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <Label Content="Sex"/>
+                            <ComboBox Name="CompetitorSexComboBox"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <Label Content="CompetitorCategory"/>
+                            <ComboBox Name="CompetitorCategoryComboBox"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <Label Content="Top"/>
+                            <TextBox Name="CompetitorTopTextBox"/>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <Label Content="Bonus"/>
+                            <TextBox Name="CompetitorBonusTextBox"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Name="AddButton" Content="Add" Width="100" Margin="5" Click="AddButton_Click"/>
+                            <Button Name="DeleteButton" Content="Delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
+
+                    <!--Competitor List View-->
+                    <ListView Name="CompetitorListView" Grid.Column="1" Margin="5" ItemsSource="{Binding CompetitorList}" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Last Name" Width="100" DisplayMemberBinding="{Binding LastName}"/>
+                                <GridViewColumn Header="Top" Width="50" DisplayMemberBinding="{Binding Top}"/>
+                                <GridViewColumn Header="Bonus" Width="50" DisplayMemberBinding="{Binding Bonus}"/>
+                                <GridViewColumn Header="Category" Width="100" DisplayMemberBinding="{Binding Category}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
             </TabItem>
         </TabControl>
-
-        <!--Competitors list view-->
-        <ListView Name="CompetitorListView" Margin="10" Grid.Column="1" ItemsSource="{Binding CompetitorList}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Last Name" Width="100" DisplayMemberBinding="{Binding LastName}"/>
-                    <GridViewColumn Header="Top" Width="50" DisplayMemberBinding="{Binding Top}"/>
-                    <GridViewColumn Header="Bonus" Width="50" DisplayMemberBinding="{Binding Bonus}"/>
-                    <GridViewColumn Header="Category" Width="100" DisplayMemberBinding="{Binding Category}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
     </Grid>
 </Window>
