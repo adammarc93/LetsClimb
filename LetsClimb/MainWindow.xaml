@@ -71,7 +71,7 @@
                             <ComboBox Name="CompetitorSexComboBox"/>
                         </StackPanel>
                         <StackPanel Margin="5">
-                            <Label Content="CompetitorCategory"/>
+                            <Label Content="Category"/>
                             <ComboBox Name="CompetitorCategoryComboBox"/>
                         </StackPanel>
                         <StackPanel Margin="5">

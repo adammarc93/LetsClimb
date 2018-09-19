@@ -14,7 +14,7 @@
     public partial class MainWindow : Window
     {
         /// <summary>
-        /// Competition's result
+        /// Competitors observable collection
         /// </summary>
         public ObservableCollection<Competitor> CompetitorList { get; set; }
 
@@ -39,6 +39,8 @@
         /// <summary>
         /// Add button click in Competitor tab item
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             var name = this.CompetitorNameTextBox.Text;
@@ -56,6 +58,8 @@
         /// <summary>
         /// Delete button click in Competitor tab item
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -71,6 +75,8 @@
         /// <summary>
         /// Clear text boxes context in Competitor tab item
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClearTextBoxes()
         {
             this.CompetitorNameTextBox.Clear();
@@ -84,6 +90,8 @@
         /// <summary>
         /// Add button click on Competition tab
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompetitionAddButton_Click(object sender, RoutedEventArgs e)
         {
             var name = this.CompetitionNameTextBox.Text;
@@ -106,6 +114,8 @@
         /// <summary>
         /// Delete button click on Competition tab
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompetitionDeleteButton_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -135,6 +145,7 @@
         /// <summary>
         /// Fill text box collection from text boxes in Competition tab item
         /// </summary>
+        /// <returns>List of text boxes from Competition tab item</returns>
         private List<TextBox> FillTextBoxCollection()
         {
             var textBoxCollection = new List<TextBox>();
@@ -151,6 +162,8 @@
         /// <summary>
         /// Text changed text box in Competition tab item
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompetitionCategoryOneTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(!String.IsNullOrEmpty(this.CompetitionCategoryOneTextBox.Text))
@@ -166,6 +179,8 @@
         /// <summary>
         /// Text changed text box in Competition tab item
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompetitionCategoryTwoTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(!String.IsNullOrEmpty(this.CompetitionCategoryTwoTextBox.Text))
@@ -181,6 +196,8 @@
         /// <summary>
         /// Text changed text box in Competition tab item
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompetitionCategoryThreeTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(!String.IsNullOrEmpty(this.CompetitionCategoryThreeTextBox.Text))
@@ -196,6 +213,8 @@
         /// <summary>
         /// Text changed text box in Competition tab item
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompetitionCategoryFourTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(!String.IsNullOrEmpty(this.CompetitionCategoryFourTextBox.Text))
@@ -211,6 +230,8 @@
         /// <summary>
         /// Text changed text box in Competition tab item
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompetitionCategoryFiveTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(!String.IsNullOrEmpty(this.CompetitionCategoryFiveTextBox.Text))

@@ -24,7 +24,9 @@
 
         /// <summary>
         /// Competition model constructor
-        /// <summary>
+        /// </summary>
+        /// <param name="name">Competition's name</param>
+        /// <param name="categories">Competition's categories</param>
         public Competition(string name, List<string> categories)
         {
             this.Name = name;
