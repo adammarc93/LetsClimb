@@ -13,32 +13,33 @@
         </Grid.ColumnDefinitions>
 
         <TabControl Grid.Column="0" Margin="10">
+            
             <!--Competitor tab item-->
-            <TabItem  Header="Compatitor">
+            <TabItem  Header="Competitor">
                 <StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="Name"/>
-                        <TextBox Name="CompatitorNameTextBox"/>
+                        <TextBox Name="CompetitorNameTextBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="LastName"/>
-                        <TextBox Name="CompatitorLastNameTextBox"/>
+                        <TextBox Name="CompetitorLastNameTextBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="Sex"/>
-                        <ComboBox Name="CompatitorSexComboBox"/>
+                        <ComboBox Name="CompetitorSexComboBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
-                        <Label Content="CompatitorCategory"/>
-                        <ComboBox Name="CompatitorCategoryComboBox"/>
+                        <Label Content="CompetitorCategory"/>
+                        <ComboBox Name="CompetitorCategoryComboBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="Top"/>
-                        <TextBox Name="CompatitorTopTextBox"/>
+                        <TextBox Name="CompetitorTopTextBox"/>
                     </StackPanel>
                     <StackPanel Margin="5">
                         <Label Content="Bonus"/>
-                        <TextBox Name="CompatitorBonusTextBox"/>
+                        <TextBox Name="CompetitorBonusTextBox"/>
                     </StackPanel>
                     <StackPanel>
                         <Button Name="AddButton" Content="Add" Width="100" Margin="5" Click="AddButton_Click"/>
@@ -52,7 +53,6 @@
         <ListView Name="CompetitorListView" Margin="10" Grid.Column="1" ItemsSource="{Binding CompetitorList}">
             <ListView.View>
                 <GridView>
-                    <!--<GridViewColumn Header="Place" Width="50"/>-->
                     <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Last Name" Width="100" DisplayMemberBinding="{Binding LastName}"/>
                     <GridViewColumn Header="Top" Width="50" DisplayMemberBinding="{Binding Top}"/>
