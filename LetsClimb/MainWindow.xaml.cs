@@ -35,12 +35,13 @@
             CompetitorList = new ObservableCollection<Competitor>();
         }
 
+        #region Competitor Controls
         /// <summary>
         /// Add button click in Competitor tab item
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void CompetitorAddButton_Click(object sender, RoutedEventArgs e)
         {
             var name = this.CompetitorNameTextBox.Text;
             var lastName = this.CompetitorLastNameTextBox.Text;
@@ -59,7 +60,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        private void CompetitorDeleteButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -76,7 +77,7 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ClearTextBoxes()
+        private void ClearCompetitorTextBoxes()
         {
             this.CompetitorNameTextBox.Clear();
             this.CompetitorLastNameTextBox.Clear();
@@ -85,7 +86,9 @@
             this.CompetitorTopTextBox.Clear();
             this.CompetitorBonusTextBox.Clear();
         }
+        #endregion
 
+        #region Competition Controls
         /// <summary>
         /// Add button click on Competition tab
         /// </summary>
@@ -260,5 +263,6 @@
                 this.CompetitorTabItem.IsEnabled = false;
             }
         }
+        #endregion
     }
 }
