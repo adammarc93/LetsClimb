@@ -16,7 +16,7 @@
         /// <summary>
         /// Competitors observable collection
         /// </summary>
-        public ObservableCollection<Competitor> CompetitorList { get; set; }
+        public ObservableCollection<Competitor> CompetitorCollection { get; set; }
 
         /// <summary>
         /// Competitions observable collection
@@ -32,7 +32,7 @@
             this.DataContext = this;
             this.CompetitorSexComboBox.ItemsSource = Enum.GetValues(typeof(Sex));
             CompetitionCollection = new ObservableCollection<Competition>();
-            CompetitorList = new ObservableCollection<Competitor>();
+            CompetitorCollection = new ObservableCollection<Competitor>();
         }
 
         #region Competitor Controls
@@ -51,8 +51,8 @@
             var bonus = Int32.Parse(this.CompetitorBonusTextBox.Text);
             var competitor = new Competitor(name, lastName, sex, category, top, bonus);
 
-            CompetitorList.Add(competitor);
-            ClearTextBoxes();
+            this.CompetitorCollection.Add(competitor);
+            ClearCompetitorTextBoxes();
         }
 
         /// <summary>
@@ -64,7 +64,7 @@
         {
             try
             {
-                this.CompetitorList.RemoveAt(this.CompetitorListView.SelectedIndex);
+                this.CompetitorCollection.RemoveAt(this.CompetitorListView.SelectedIndex);
             }
             catch(ArgumentException)
             {
@@ -98,7 +98,7 @@
         {
             var name = this.CompetitionNameTextBox.Text;
             var categories = new List<string>();
-            var textBoxCollection = FillTextBoxCollection();
+            var textBoxCollection = FillCompetitionTextBoxCollection();
 
             foreach(var textBox in textBoxCollection)
             {
@@ -148,7 +148,7 @@
         /// Fill text box collection from text boxes in Competition tab item
         /// </summary>
         /// <returns>List of text boxes from Competition tab item</returns>
-        private List<TextBox> FillTextBoxCollection()
+        private List<TextBox> FillCompetitionTextBoxCollection()
         {
             var textBoxCollection = new List<TextBox>();
             textBoxCollection.Add(this.CompetitionCategoryOneTextBox);

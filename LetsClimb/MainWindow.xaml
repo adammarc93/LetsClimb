@@ -83,13 +83,13 @@
                             <TextBox Name="CompetitorBonusTextBox"/>
                         </StackPanel>
                         <StackPanel>
-                            <Button Name="AddButton" Content="Add" Width="100" Margin="5" Click="AddButton_Click"/>
-                            <Button Name="DeleteButton" Content="Delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
+                            <Button Name="AddButton" Content="Add" Width="100" Margin="5" Click="CompetitorAddButton_Click"/>
+                            <Button Name="DeleteButton" Content="Delete" Width="100" Margin="5" Click="CompetitorDeleteButton_Click"/>
                         </StackPanel>
                     </StackPanel>
 
                     <!--Competitor List View-->
-                    <ListView Name="CompetitorListView" Grid.Column="1" Margin="5" ItemsSource="{Binding CompetitorList}" >
+                    <ListView Name="CompetitorListView" Grid.Column="1" Margin="5" ItemsSource="{Binding CompetitorCollection}" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}"/>
